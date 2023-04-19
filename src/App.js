@@ -1,4 +1,4 @@
-//import logo from "./logo.svg";
+import { useState } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route } from "react-router-dom";
@@ -18,6 +18,7 @@ import Navbar from "./components/Navbar";
 //8. 로그인.로그아웃 버튼 상태 변경
 //9. 상품 검색할 수 있다.
 function App() {
+  const [authenticate, setAuthenticate] = useState(false);
   return (
     <div>
       <Navbar />
