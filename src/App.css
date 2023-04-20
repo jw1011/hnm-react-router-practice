@@ -19,3 +19,12 @@
   display: flex;
   justify-content: center;
 }
+.product-img {
+  display: flex;
+  justify-content: flex-end;
+}
+.add-button {
+  background-color: black;
+  color: white;
+  text-align: center;
+}
