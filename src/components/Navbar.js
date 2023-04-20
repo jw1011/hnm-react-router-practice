@@ -19,6 +19,18 @@ const Navbar = () => {
   const goToLogin = () => {
     navigate("/login");
   };
+  const goToHome = () => {
+    navigate("/");
+  };
+  const search = (event) => {
+    if (event.key === "Enter") {
+      //입력한 검색어를 읽어와서
+      let keyword = event.target.value;
+      console.log("keyword", keyword);
+      // url을 바꿔준다
+      navigate(`/?q=${keyword}`);
+    }
+  };
   return (
     <div>
       <div>
@@ -32,6 +44,7 @@ const Navbar = () => {
           width={100}
           src="https://logos-world.net/wp-content/uploads/2020/04/HM-Logo-700x394.png"
           alt="h&m logo"
+          onClick={goToHome}
         />
       </div>
       <div className="menu-area">
@@ -40,9 +53,9 @@ const Navbar = () => {
             <li>{menu}</li>
           ))}
         </ul>
-        <div>
+        <div className="search-box">
           <FontAwesomeIcon icon={faSearch} />
-          <input type="text" />
+          <input type="text" onKeyPress={(event) => search(event)} />
         </div>
       </div>
     </div>
